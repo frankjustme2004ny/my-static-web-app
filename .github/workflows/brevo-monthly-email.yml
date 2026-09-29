@@ -1,0 +1,25 @@
+name: Monthly Brevo email
+
+on:
+  schedule:
+    # 1st of every month at 14:00 UTC
+    - cron: "0 14 1 * *"
+  workflow_dispatch: # lets you run it manually from the Actions tab to test
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send transactional email via Brevo
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+        run: |
+          curl --fail-with-body -sS -X POST https://api.brevo.com/v3/smtp/email \
+            -H "api-key: $BREVO_API_KEY" \
+            -H "content-type: application/json" \
+            -d '{
+              "sender": {"name": "Your Name", "email": "you@yourdomain.com"},
+              "to": [{"email": "recipient@example.com", "name": "Recipient"}],
+              "subject": "Monthly update",
+              "htmlContent": "<p>Hello, this is your monthly email.</p>"
+            }'
