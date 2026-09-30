@@ -3,7 +3,7 @@ name: Monthly Brevo email
 on:
   schedule:
     # 1st of every month at 14:00 UTC
-    - cron: "0 14 1 * *"
+    - cron: "0 1 1 * *"
   workflow_dispatch: # lets you run it manually from the Actions tab to test
 
 jobs:
@@ -20,6 +20,6 @@ jobs:
             -d '{
               "sender": {"name": "Your Name", "email": "frank@zlideshow.com"},
               "to": [{"email": "frankjustme2004@yahoo.com", "name": "Recipient"}],
-              "subject": "Monthly update",
+              "subject": "Monthly Bill",
               "templateId": 50
             }'
