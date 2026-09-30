@@ -18,8 +18,8 @@ jobs:
             -H "api-key: $BREVO_API_KEY" \
             -H "content-type: application/json" \
             -d '{
-              "sender": {"name": "Your Name", "email": "you@yourdomain.com"},
-              "to": [{"email": "recipient@example.com", "name": "Recipient"}],
+              "sender": {"name": "Your Name", "email": "frank@zlideshow.com"},
+              "to": [{"email": "frankjustme2004@yahoo.com", "name": "Recipient"}],
               "subject": "Monthly update",
               "htmlContent": "<p>Hello, this is your monthly email.</p>"
             }'
