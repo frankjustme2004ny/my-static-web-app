@@ -1,8 +1,7 @@
 ---
 page_type: sample
 languages:
-  - javascript
-  - typescript
+  - python
 products:
   - azure functions
 description: 'Apps that can be used with as a starting point for some MS Learn Modules.'
